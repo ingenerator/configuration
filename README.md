@@ -20,7 +20,12 @@ Add config to your composer.json and run `composer update` to install it.
 
 In your bootstrap:
 ```php
-Config_Initialiser::initialise(Kohana::$config);
+/**
+ * Enable the composer autoloader
+ */
+require_once(__DIR__.'/../vendor/autoload.php');
+
+\Ingenerator\Config\ConfigInitialiser::initialise(Kohana::$config);
 ```
 
 To override the source control config (for example to allow for different database or service credentials in different 
@@ -30,7 +35,9 @@ You can also provide simple user-overridable config by dropping a second JSON at
 
 ## Testing and developing
 
-config has a full suite of [PhpSpec](http://phpspec.net) specifications - run them with `bin/phpspec run`.
+config has a full suite of [PhpSpec](http://phpspec.net) specifications. You'll need a skeleton Kohana application to run them,
+you can use [koharness](https://github.com/ingenerator/koharness) to create one. See [travis.yml](travis.yml) for the build
+steps required.
 Contributions will only be accepted if they are accompanied by well structured specs. Installing with composer should
 get you everything you need to work on the project.
 

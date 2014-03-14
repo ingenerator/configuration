@@ -14,12 +14,14 @@
   ],
 
   "require": {
-    "php":           ">=5.3.3"
-    "kohana/config": "3.3.*"
+    "php":           ">=5.3.3",
+    "kohana/core":   "3.3.*"
   },
 
   "require-dev": {
-    "phpspec/phpspec": "2.0.*@dev"
+    "ingenerator/koharness" : "*@dev",
+    "phpspec/phpspec":        "2.0.*@dev",
+    "phpspec/prophecy":       "1.1.*@dev"
   },
 
   "suggest": {

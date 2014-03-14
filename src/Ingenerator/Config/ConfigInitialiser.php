@@ -1,7 +1,7 @@
 <?php
 /**
  * @author     Andrew Coulton <andrew@ingenerator.com>
- * @copyright  inGenerator Ltd
+ * @copyright  2014 inGenerator Ltd
  * @licence    BSD
  */
 
@@ -20,9 +20,9 @@ class ConfigInitialiser {
 		return APPPATH.'/config/user_config_overrides.json';
 	}
 
-	public static function initialise(Config $config)
+	public static function initialise(\Config $config)
 	{
-		$config->attach(new Config_File);
+		$config->attach(new \Config_File);
 		$config->attach(new JsonConfigReader(APPPATH.'/config/deployment_config_overrides.json'));
 		if (file_exists(self::user_config_path()))
 		{

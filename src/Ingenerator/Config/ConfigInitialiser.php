@@ -20,13 +20,21 @@ class ConfigInitialiser {
 		return APPPATH.'/config/user_config_overrides.json';
 	}
 
+	public static function deployment_config_path()
+	{
+		return APPPATH.'/config/deployment_config_overrides.json';
+	}
+
 	public static function initialise(\Config $config)
 	{
 		$config->attach(new \Config_File);
-		$config->attach(new JsonConfigReader(APPPATH.'/config/deployment_config_overrides.json'));
-		if (file_exists(self::user_config_path()))
-		{
-			$config->attach(new JsonConfigReader(self::user_config_path()));
+		foreach (
+			array(self::deployment_config_path(), self::user_config_path())
+			as $file
+		) {
+			if (file_exists($file)) {
+				$config->attach(new JsonConfigReader($file));
+			}
 		}
 		return $config;
 	}

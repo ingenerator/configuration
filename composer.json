@@ -34,7 +34,10 @@
 
   "autoload": {
     "psr-0": {
-      "Ingenerator\\Config\\": "src/",
+      "Ingenerator\\Config\\": "src/"
+    },
+  "autoload-dev": {
+    "psr-0": {
       "spec":                  ""
     }
   },

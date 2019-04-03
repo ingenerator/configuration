@@ -1,5 +1,9 @@
 ## Unreleased
 
+## v1.0.0 (2019-04-03)
+
+* Actually drop support for php5
+
 ## v0.1.4 (2018-02-17)
 
 * Add support for, and test on, PHP 7.2

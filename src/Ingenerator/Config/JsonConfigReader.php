@@ -22,11 +22,11 @@ class JsonConfigReader implements \Kohana_Config_Reader{
 	 */
 	public function __construct($json_path)
 	{
-		if ( ! is_readable($json_path)) {
+		if ( ! \is_readable($json_path)) {
 			throw new \InvalidArgumentException("File $json_path does not exist or is not readable");
 		}
 
-		if (NULL === $this->data = json_decode(file_get_contents($json_path), TRUE)) {
+		if (NULL === $this->data = \json_decode(\file_get_contents($json_path), TRUE)) {
 			throw new \InvalidArgumentException("File $json_path contains invalid JSON");
 		}
 	}

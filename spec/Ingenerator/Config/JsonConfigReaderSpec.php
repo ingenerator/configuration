@@ -38,7 +38,7 @@ class JsonConfigReaderSpec extends ObjectBehavior
 	{
 		if ($this->tmp_file)
 		{
-			unlink($this->tmp_file);
+			\unlink($this->tmp_file);
 		}
 	}
 
@@ -59,10 +59,10 @@ class JsonConfigReaderSpec extends ObjectBehavior
 
 	function it_throws_on_construct_if_json_is_invalid()
 	{
-		$path = tempnam(sys_get_temp_dir(), 'badjson');
-		file_put_contents($path, '<some xml got here!>');
+		$path = \tempnam(\sys_get_temp_dir(), 'badjson');
+		\file_put_contents($path, '<some xml got here!>');
 		$this->shouldThrow('InvalidArgumentException')->during('__construct', array($path));
-		unlink($path);
+		\unlink($path);
 	}
 
 	function it_returns_false_for_load_with_group_not_found_in_file()
@@ -87,8 +87,8 @@ class JsonConfigReaderSpec extends ObjectBehavior
 	 */
 	protected function given_constructed_with_json_data($arr)
 	{
-		$path = tempnam(sys_get_temp_dir(), 'jsonconfig');
-		file_put_contents($path, json_encode($arr));
+		$path = \tempnam(\sys_get_temp_dir(), 'jsonconfig');
+		\file_put_contents($path, \json_encode($arr));
 		$this->beConstructedWith($path);
 
 		$this->tmp_file = $path;

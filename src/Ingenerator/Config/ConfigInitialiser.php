@@ -32,7 +32,7 @@ class ConfigInitialiser {
 			array(self::deployment_config_path(), self::user_config_path())
 			as $file
 		) {
-			if (file_exists($file)) {
+			if (\file_exists($file)) {
 				$config->attach(new JsonConfigReader($file));
 			}
 		}

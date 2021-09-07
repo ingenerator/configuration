@@ -14,7 +14,7 @@
   ],
 
   "require": {
-    "php":           "^7.2",
+    "php":           "^7.4 || ~8.0.0",
     "kohana/core":   "3.3.*"
   },
 
@@ -52,7 +52,6 @@
   },
 
   "config": {
-    "bin-dir":           "bin",
     "preferred-install": "dist"
   }
 }

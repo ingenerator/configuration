@@ -1,7 +1,5 @@
 # Config - Useful extensions to the kohana config system, including for loading deployment config from a JSON
 
-- [![Master Build Status](https://travis-ci.org/ingenerator/configuration.png?branch=master)](https://travis-ci.org/ingenerator/configuration)
-
 Config is a small set of classes that add useful functionality to the kohana config system. It includes a JSON config
 reader, and a config initialiser that wraps up the process of loading all config files to make it easier to reload
 config during build etc and reduce the size of your bootstrap.
@@ -36,8 +34,8 @@ You can also provide simple user-overridable config by dropping a second JSON at
 ## Testing and developing
 
 config has a full suite of [PhpSpec](http://phpspec.net) specifications. You'll need a skeleton Kohana application to run them,
-you can use [koharness](https://github.com/ingenerator/koharness) to create one. See [travis.yml](travis.yml) for the build
-steps required.
+you can use [koharness](https://github.com/ingenerator/koharness) to create one.
+
 Contributions will only be accepted if they are accompanied by well structured specs. Installing with composer should
 get you everything you need to work on the project.
 

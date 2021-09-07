@@ -15,12 +15,12 @@
 
   "require": {
     "php":           "^7.4 || ~8.0.0",
-    "kohana/core":   "3.3.*"
+    "ingenerator/kohana-core":   "^4.7"
   },
 
   "require-dev": {
-    "ingenerator/koharness" : "*@dev",
-    "phpspec/phpspec":        "^2.0",
+    "ingenerator/koharness" : "dev-master",
+    "phpspec/phpspec":        "^6.2",
     "phpspec/prophecy":       "^1.1"
   },
 
@@ -36,22 +36,25 @@
     "psr-0": {
       "Ingenerator\\Config\\": "src/"
     }
-  },  
+  },
   "autoload-dev": {
     "psr-0": {
       "spec":                  ""
     }
   },
-
-  "bin": [],
-
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://php-packages.ingenerator.com"
+    }
+  ],
   "extra": {
     "branch-alias": {
       "dev-master": "0.2.x-dev"
     }
   },
-
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }

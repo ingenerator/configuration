@@ -1,5 +1,9 @@
 ## Unreleased
 
+## v1.1.0 (2021-09-07)
+
+* Support and test on PHP 8.0
+
 ## v1.0.0 (2019-04-03)
 
 * Actually drop support for php5
